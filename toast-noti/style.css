@@ -25,7 +25,7 @@
     
 } 
 
-.toast::after{
+.show::after{
     content: '';
     position: absolute;
     bottom: 0;
