@@ -1,0 +1,61 @@
+
+
+.container {
+    position: relative;
+    width: 200px;
+    
+}
+.show {
+    animation: toast 2.2s ease-out .2s  forwards;
+}
+
+.toast {
+    opacity: 0;
+    pointer-events: none;
+    width: 200px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    height: 100px;
+    background-color: antiquewhite;
+    height: 50px;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    
+} 
+
+.toast::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    border-radius: 8px;
+    border-bottom: 4px solid  rgb(218, 116, 32);
+    animation: noti 2.2s linear 0.2s ;
+    transform-origin: left;
+
+
+}
+
+@keyframes noti {
+    from{
+        transform: scaleX(1);
+    }
+    to {
+        transform: scaleX(0);
+    }
+}
+
+
+
+
+
+@keyframes toast {
+  0%   { transform: translateY(100px); opacity: 0; } /* off screen */
+  15%  { transform: translateY(0);     opacity: 1; } /* slide in */
+  85%  { transform: translateY(0);     opacity: 1; } /* hold */
+  100% { transform: translateY(100px); opacity: 0; } /* slide out */
+}
